@@ -30,6 +30,10 @@ GEM
       activemodel (= 4.2.3)
       activesupport (= 4.2.3)
       arel (~> 6.0)
+    activeresource (4.0.0)
+      activemodel (~> 4.0)
+      activesupport (~> 4.0)
+      rails-observers (~> 0.1.1)
     activesupport (4.2.3)
       i18n (~> 0.7)
       json (~> 1.7, >= 1.7.7)
@@ -37,6 +41,10 @@ GEM
       thread_safe (~> 0.3, >= 0.3.4)
       tzinfo (~> 1.1)
     arel (6.0.3)
+    babel-source (5.8.34)
+    babel-transpiler (0.7.0)
+      babel-source (>= 4.0, < 6)
+      execjs (~> 2.0)
     better_errors (2.1.1)
       coderay (>= 1.0.0)
       erubis (>= 2.6.6)
@@ -45,6 +53,8 @@ GEM
       debug_inspector (>= 0.0.1)
     builder (3.2.2)
     byebug (8.2.0)
+    challonge-api (0.2.0)
+      activeresource
     coderay (1.1.0)
     coffee-rails (4.1.0)
       coffee-script (>= 2.2.0)
@@ -53,6 +63,7 @@ GEM
       coffee-script-source
       execjs
     coffee-script-source (1.10.0)
+    connection_pool (2.2.0)
     debug_inspector (0.0.2)
     elo (0.1.0)
     erubis (2.7.0)
@@ -108,6 +119,8 @@ GEM
       rails-deprecated_sanitizer (>= 1.0.1)
     rails-html-sanitizer (1.0.2)
       loofah (~> 2.0)
+    rails-observers (0.1.2)
+      activemodel (~> 4.0)
     railties (4.2.3)
       actionpack (= 4.2.3)
       activesupport (= 4.2.3)
@@ -115,6 +128,15 @@ GEM
       thor (>= 0.18.1, < 2.0)
     rake (10.4.2)
     rdoc (4.2.0)
+    react-bootstrap-rails (0.27.3)
+      rails (>= 3.1)
+    react-rails (1.5.0)
+      babel-transpiler (>= 0.7.0)
+      coffee-script-source (~> 1.8)
+      connection_pool
+      execjs
+      rails (>= 3.2)
+      tilt
     sass (3.4.19)
     sass-rails (5.0.4)
       railties (>= 4.0.0, < 5.0)
@@ -156,6 +178,7 @@ DEPENDENCIES
   better_errors
   binding_of_caller
   byebug
+  challonge-api
   coffee-rails (~> 4.1.0)
   elo
   jbuilder (~> 2.0)
@@ -163,6 +186,8 @@ DEPENDENCIES
   pg
   pry-rails
   rails (= 4.2.3)
+  react-bootstrap-rails
+  react-rails (~> 1.5.0)
   sass-rails (~> 5.0)
   sdoc (~> 0.4.0)
   spring

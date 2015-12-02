@@ -1,4 +1,5 @@
 class Player < ActiveRecord::Base
+	include Elo 
 	validates :name, :player_id, presence: true 
 
 	has_many :won_matches,
@@ -10,5 +11,10 @@ class Player < ActiveRecord::Base
 	class_name: "Match",
 	primary_key: :player_id,
 	foreign_key: :loser
-	
+
+	def match_count
+		self.won_matches.count + self.lost_matches.count 
+	end
+
+
 end
