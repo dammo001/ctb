@@ -1,6 +1,5 @@
 class Player < ActiveRecord::Base
-	include Elo 
-	validates :name, :player_id, presence: true 
+	validates :name, :player_id, presence: true, uniqueness: true 
 
 	has_many :won_matches,
 	class_name: "Match",

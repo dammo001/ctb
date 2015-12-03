@@ -11,19 +11,21 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20151125225932) do
+ActiveRecord::Schema.define(version: 20151202054910) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
   create_table "matches", force: :cascade do |t|
-    t.integer  "winner",     null: false
-    t.integer  "loser",      null: false
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+    t.integer  "winner_id",                  null: false
+    t.integer  "loser_id",                   null: false
+    t.datetime "created_at",                 null: false
+    t.datetime "updated_at",                 null: false
+    t.boolean  "seen",       default: false
+    t.integer  "match_id"
   end
 
-  add_index "matches", ["winner", "loser"], name: "index_matches_on_winner_and_loser", using: :btree
+  add_index "matches", ["winner_id", "loser_id"], name: "index_matches_on_winner_id_and_loser_id", using: :btree
 
   create_table "players", force: :cascade do |t|
     t.string   "name",                      null: false
