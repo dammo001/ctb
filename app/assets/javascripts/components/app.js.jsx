@@ -1,3 +1,7 @@
+var Button = ReactBootstrap.Button; 
+
+
+
 window.createRouter = function(){
 	var Router = ReactRouter.Router;
 	var Route = ReactRouter.Route;
@@ -9,16 +13,17 @@ window.createRouter = function(){
 			return (
 				<div id="wrapper">
 					<div id="outer-content-wrapper">
-					HELLO!!!
+					<div id="content-wrapper">{this.props.children}</div> 
 					</div>
 				</div>
 			)
 		}
 	});
 
-	React.render((
+	ReactDOM.render((
 		<Router>
 			<Route path="/" component={App}>
+				<IndexRoute component={Index}/> 
 			</Route>
 		</Router>
 		), rootEl); 
